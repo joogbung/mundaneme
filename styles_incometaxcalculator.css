@@ -1,0 +1,94 @@
+body {
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 20px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+label {
+    color: #555;
+    display: block;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 4px;
+    color: #444;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+button[type="button"], button[type="clear"] {
+    background-color: #444;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+button[type="button"]:hover, button[type="clear"]:hover {
+    background-color: #444;
+}
+
+#taxableIncomeBtn, #calculateTaxBtn {
+    background-color: #444;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
+
+#taxableIncomeBtn:hover, #calculateTaxBtn:hover {
+    background-color: #0d47a1;
+}
+
+#taxAmountEl {
+    color: #333;
+    display: inline-block;
+    font-size: 18px;
+    margin-left: 10px;
+    text-shadow: 1px 1px 1px #ddd;
+}
+
+#incomeEl {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#deductionsEl {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#taxableIncomeEl {
+    background-color: rgba(0, 0, 0, 0.2);
+}
