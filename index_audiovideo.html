@@ -2,22 +2,24 @@
 <html>
     <head>
         <title>HTML5 Video and Audio Player</title>
+        <link rel="stylesheet" type="text/css" href="styles_audiovideo.css">
     </head>
     <body>
-        <video width="640" height="360" controls>
+        <video id="videoplayer" controls>
             <source src="D:\My Media\My Content Videos\My test video state of decay.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <br>
         <br>
-
-        <P>Here is a recording of one of the many funny voice messages my best mate has sent me</P>
-
-        <audio controls>
+        <section>
+            <P>Here is a recording of one of the many funny voice messages my best mate has sent me</P>
+            <audio id="audioplayer" controls>
             <source src="D:\My Media\Audio\audioclip-1664140773000-11006.mp4" type="audio/mpeg">
-            
             Your browser does not support the audio tag.
+        </section>
+    
+            
         </audio>
     </body>
 </html>
