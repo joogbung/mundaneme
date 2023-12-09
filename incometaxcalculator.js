@@ -6,7 +6,7 @@ const hourlyRateInput = document.getElementById('hourlyRateEl');
 const incomeBtn = document.getElementById('incomeButtonEl');
 const incomeInput = document.getElementById('incomeEl');
 
-    // Creating variables out of the user's input for the income function
+    // Creating variables out of the user's input for the income function.
 function calculateIncome() {
     var hourlyRate = parseFloat(document.getElementById("hourlyRateEl").value);
     var hoursPerDay = parseFloat(document.getElementById("hoursPerDayEl").value);
@@ -15,14 +15,14 @@ function calculateIncome() {
     var income = parseFloat(document.getElementById("incomeEl").value);
   
     if (!isNaN(hourlyRate) && !isNaN(hoursPerDay) && !isNaN(daysPerWeek) && incomeFrequency !== "") {
-    // Calculate income based on hourly rate, hours per day, days per week, and income frequency
+    // Calculate income based on hourly rate, hours per day, days per week, and income frequency.
       var frequencyMultiplier = {"weekly": 1, "fort-nightly": 2, "monthly": 4, "yearly": 52}[incomeFrequency];
       var calculatedIncome = hourlyRate * hoursPerDay * daysPerWeek * frequencyMultiplier;
       document.getElementById("incomeEl").value = calculatedIncome.toFixed(2);
 } 
 };
 
-    // Creating variables out of the user's input for the hourly rate function
+    // Creating variables out of the user's input for the hourly rate function.
 function calculateHourlyRate() {
     // var hourlyRate = parseFloat(document.getElementById("hourlyRateEl").value);
     var hoursPerDay = parseFloat(document.getElementById("hoursPerDayEl").value);
@@ -31,12 +31,12 @@ function calculateHourlyRate() {
     var income = parseFloat(document.getElementById("incomeEl").value);
   
     if (!isNaN(income) && !isNaN(hoursPerDay) && !isNaN(daysPerWeek) && incomeFrequency !== "") {
-    // Calculate hourly rate based on income, hours per day, days per week, and income frequency
+    // Calculate hourly rate based on income, hours per day, days per week, and income frequency.
     var frequencyMultiplier = {"weekly": 1, "fort-nightly": 2, "monthly": 4, "yearly": 52}[incomeFrequency];
     var calculatedHourlyRate = income / (hoursPerDay * daysPerWeek * frequencyMultiplier);
     document.getElementById("hourlyRateEl").value = calculatedHourlyRate.toFixed(2);
 } else {
-    // If not all necessary inputs are present, display an error message
+    // If not all necessary inputs are present, display an error message.
     alert("Please enter valid values for all fields.");
 }
 };
