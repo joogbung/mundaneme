@@ -48,6 +48,8 @@ let chances = 3;
 //  "chances" are the amount of chances you have to win. Each incorrect pairing loses a chance 
 const boxes = document.querySelectorAll(".box");
 //  The const "boxes" variable uses the "document.querySelectorAll" method to select every element with the class "box"
+
+
 function generateWords() {
     boxes.forEach((box, index) => {
 //  "forEach" method takes up to 3 arguments "currentValue, index and array" but here only the first 2 arguments will be used        
@@ -61,13 +63,14 @@ function generateWords() {
         box.addEventListener('click', () => revealBox(box));
     });
 
-    // Reveal words for 2 seconds
+// Reveal words for 3 seconds
     boxes.forEach((box) => {
-        box.textContent = box.dataset.word; // Reveal word
+        box.textContent = box.dataset.word; 
+// textContent method, gets or sets the content of an HTML element. In this case the "box" divs. The content is the word in its dataset        
     });
 
     setTimeout(() => {
-        // Hide words after 2 seconds
+// Hide words after 3 seconds
         boxes.forEach((box) => {
             box.textContent = '';
             box.addEventListener('click', () => revealBox(box));
@@ -75,43 +78,65 @@ function generateWords() {
     }, 3000);
 }
 
+
 function revealBox(box) {
     if (!openedBoxes.includes(box) && openedBoxes.length < 2) {
         openedBoxes.push(box);
         box.textContent = box.dataset.word;
 
         if (openedBoxes.length === 2) {
-            setTimeout(() => checkMatch(), 1000);
+            setTimeout(() => checkMatch(), 0);
         }
     }
 }
 
+
 function checkMatch() {
     const [box1, box2] = openedBoxes;
 
-    if (box1.dataset.word === box2.dataset.word) {
+    if (box1.dataset.word !== box2.dataset.word) {
         openedBoxes = [];
         chances--;
-
-        if (chances >= 0) {
-            window.alert(`Match found! ${chances} chances left.`);
+        
+        if (chances !== 0) {
+            window.alert(`No Match! ${chances} chances left.`);
+            setTimeout(() => {
+                box1.textContent = '';
+                box2.textContent = '';
+                openedBoxes = [];
+            }, 0);
         }
 
         if (chances === 0) {
             gameOver();
         }
-    } else {
-        setTimeout(() => {
-            box1.textContent = '';
-            box2.textContent = '';
-            openedBoxes = [];
-        }, 1000);
-    }
+
+        
+        
+    } else (box1.dataset.word === box2.dataset.word) 
+        openedBoxes = [];
+        
+
+
+    
+}
+
+function chanceUpdate() {
+    
 }
 
 function gameOver() {
+    boxes.forEach((box) => {
+        box.textContent = box.dataset.word;
+    })
     window.alert("GAME OVER");
 }
+
+function resetGame() {
+    location.reload();
+}
+
+
 
 //  Initialize the game
 generateWords();
